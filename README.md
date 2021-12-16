@@ -70,7 +70,7 @@ jboss/keycloak
 13. user1 생성 후 Credentials 탭으로 이동 후 비밀번호를 설정 후 하단의 Set Password 버튼을 누른다.
 ![keycloak-demo-5](./doc-images/keycloak-demo-5.png)
 
-14. 상단 Role Mappings 탭으로 이동 후 Available Roles 에서 11번에서 생성한 user Role 을 클릭 후 Ad Selected 버튼을 클릭하면 user Role 이 Assigned Roles 로 이동한다. 이렇게 되면 완료된 상태이다.
+14. 상단 Role Mappings 탭으로 이동 후 Client Roles > login-app 선택 후 Available Roles 에서 11번에서 생성한 user Role 을 클릭 후 Ad Selected 버튼을 클릭하면 user Role 이 Assigned Roles 로 이동한다. 이렇게 되면 완료된 상태이다.
 ![keycloak-demo-6](./doc-images/keycloak-demo-6.png)
 
 15. 설정이 완료되었으면 postman 프로그램을 이용하여 로그인 테스트가 가능하다. 로그인이 정상적으로 되었으면 토큰이 발급된다.
