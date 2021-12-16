@@ -22,13 +22,9 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.6.1")
-	implementation("org.springframework.cloud:spring-cloud-starter-security:2.2.5.RELEASE")
-	implementation("org.springframework.cloud:spring-cloud-starter-oauth2:2.2.5.RELEASE")
 	implementation("com.google.code.gson:gson:2.8.9")
-	compileOnly("org.projectlombok:lombok:1.18.22")
 	runtimeOnly ("com.h2database:h2")
-	annotationProcessor("org.projectlombok:lombok")
-
+	implementation("org.keycloak:keycloak-spring-boot-starter:15.0.2")
 }
 
 tasks.withType<KotlinCompile> {

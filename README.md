@@ -1,6 +1,6 @@
 ### Spring Boot(Kotlin) + Spring Security + Keycloak Demo
 
-#### Docker Keycloak + MariaDB 설정 및 기본 KeyCloak 사용법
+#### Docker Keycloak + MariaDB 설정 및 KeyCloak 기본 사용법 
 1. Keycloak 이미지와 MariaDB 이미지를 다운 받는다.
 
 ```
@@ -53,12 +53,12 @@ jboss/keycloak
 ![keycloak-login](./doc-images/keycloak-login.png)
 ![keycloak-login-success](./doc-images/keycloak-login-success.png)
 
-8. 왼쪽 상단 Master 에 마우스를 올려두면 Realm 을 생성 할 수 있다. 신규 Realm 을 하나 생성한다. Realm 이름은 SpringBootKeycloak 이다.
+8. 왼쪽 상단 Master 에 마우스를 올려두면 Realm 을 생성 할 수 있다. 신규 Realm 을 하나 생성한다. Realm 이름은 springbootkeycloak 이다.
 
 9. 왼쪽 Client 메뉴로 이동 후 Create 버튼을 클릭하여 Client 를 생성합니다. Client 이름은 login-app 이다.
 ![keycloak-demo-1](./doc-images/keycloak-demo-1.png)
 
-10. Client 생성한 뒤 이동된 페이지의 하단에 Valid Redirect URIs 항목에 http://127.0.0.1:8000/* 을 입력 후 맨 하단의 Save 버튼을 누릅니다.
+10. Client 생성한 뒤 이동된 페이지의 하단에 Valid Redirect URIs 항목에 http://127.0.0.1:9000/* 을 입력 후 맨 하단의 Save 버튼을 누릅니다. 9000 포트는 스프링부트 어플리케이션의 포트이다. 그외에 빨간색 네모 부분을 설정한다.
 ![keycloak-demo-2](./doc-images/keycloak-demo-2.png)
 
 11. 왼쪽 Roles 메뉴로 이동 후 Add Role 버튼을 클릭하여 user 라는 Role 을 생성한다.
@@ -72,3 +72,6 @@ jboss/keycloak
 
 14. 상단 Role Mappings 탭으로 이동 후 Available Roles 에서 11번에서 생성한 user Role 을 클릭 후 Ad Selected 버튼을 클릭하면 user Role 이 Assigned Roles 로 이동한다. 이렇게 되면 완료된 상태이다.
 ![keycloak-demo-6](./doc-images/keycloak-demo-6.png)
+
+15. 설정이 완료되었으면 postman 프로그램을 이용하여 로그인 테스트가 가능하다. 로그인이 정상적으로 되었으면 토큰이 발급된다.
+![keycloak-demo-7](./doc-images/keycloak-demo-7.png)
