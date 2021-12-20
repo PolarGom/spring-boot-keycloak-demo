@@ -64,17 +64,20 @@ jboss/keycloak
 11. Credentials 탭에서 Secret 값을 기억해 둔다.
 ![keycloak-demo-2-2](./doc-images/keycloak-demo-2-2.png)
 
-12. 왼쪽 Roles 메뉴로 이동 후 Add Role 버튼을 클릭하여 user 라는 Role 을 생성한다.
+12. Roles 탭에서 Add Role 버튼을 눌러서 Role 을 생성합니다.
+![keycloak-demo-2-3](./doc-images/keycloak-demo-2-3.png)
+
+13. 왼쪽 Roles 메뉴로 이동 후 Add Role 버튼을 클릭하여 app-user 라는 Role 을 생성한다.
 ![keycloak-demo-3](./doc-images/keycloak-demo-3.png)
 
-13. 왼쪽 Users 메뉴로 이동 후 Add user 버튼을 클릭하여 user1 이라는 사용자를 생성한다.
+14. 왼쪽 Users 메뉴로 이동 후 Add user 버튼을 클릭하여 user1 이라는 사용자를 생성한다.
 ![keycloak-demo-4](./doc-images/keycloak-demo-4.png)
 
-14. user1 생성 후 Credentials 탭으로 이동 후 비밀번호를 설정 후 하단의 Set Password 버튼을 누른다.
+15. user1 생성 후 Credentials 탭으로 이동 후 비밀번호를 설정 후 하단의 Set Password 버튼을 누른다.
 ![keycloak-demo-5](./doc-images/keycloak-demo-5.png)
 
-15. 상단 Role Mappings 탭으로 이동 후 Client Roles > login-app 선택 후 Available Roles 에서 11번에서 생성한 user Role 을 클릭 후 Ad Selected 버튼을 클릭하면 user Role 이 Assigned Roles 로 이동한다. 이렇게 되면 완료된 상태이다.
+16. 상단 Role Mappings 탭으로 이동 후 Client Roles > login-app 선택 후 Available Roles 에서 11번에서 생성한 user Role 을 클릭 후 Add Selected 버튼을 클릭하면 user Role 이 Assigned Roles 로 이동한다. 이렇게 되면 완료된 상태이다.
 ![keycloak-demo-6](./doc-images/keycloak-demo-6.png)
 
-16. 설정이 완료되었으면 postman 프로그램을 이용하여 로그인 테스트가 가능하다. 로그인이 정상적으로 되었으면 토큰이 발급된다.
+17. 설정이 완료되었으면 postman 프로그램을 이용하여 로그인 테스트가 가능하다. 로그인이 정상적으로 되었으면 토큰이 발급된다.
 ![keycloak-demo-7](./doc-images/keycloak-demo-7.png)

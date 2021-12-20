@@ -25,7 +25,12 @@ class KeycloakConfig: KeycloakWebSecurityConfigurerAdapter() {
 
         super.configure(http)
 
-        http!!.authorizeRequests().anyRequest().permitAll()
+        http!!.authorizeRequests()
+            .antMatchers("/api/anonymous").permitAll()
+            .antMatchers("/api/user").hasAnyRole("app-user")
+            .antMatchers("/api/admin").hasAnyRole("app-admin")
+            .antMatchers("/api/all-user").hasAnyRole("app-user", "app-admin")
+            .anyRequest().permitAll()
         http!!.csrf().disable()
     }
 
