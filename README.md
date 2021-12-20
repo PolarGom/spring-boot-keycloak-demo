@@ -61,17 +61,20 @@ jboss/keycloak
 10. Client 생성한 뒤 이동된 페이지의 하단에 Valid Redirect URIs 항목에 http://127.0.0.1:9000/* 을 입력 후 맨 하단의 Save 버튼을 누릅니다. 9000 포트는 스프링부트 어플리케이션의 포트이다. 그외에 빨간색 네모 부분을 설정한다.
 ![keycloak-demo-2](./doc-images/keycloak-demo-2.png)
 
-11. 왼쪽 Roles 메뉴로 이동 후 Add Role 버튼을 클릭하여 user 라는 Role 을 생성한다.
+11. Credentials 탭에서 Secret 값을 기억해 둔다.
+![keycloak-demo-2-2](./doc-images/keycloak-demo-2-2.png)
+
+12. 왼쪽 Roles 메뉴로 이동 후 Add Role 버튼을 클릭하여 user 라는 Role 을 생성한다.
 ![keycloak-demo-3](./doc-images/keycloak-demo-3.png)
 
-12. 왼쪽 Users 메뉴로 이동 후 Add user 버튼을 클릭하여 user1 이라는 사용자를 생성한다.
+13. 왼쪽 Users 메뉴로 이동 후 Add user 버튼을 클릭하여 user1 이라는 사용자를 생성한다.
 ![keycloak-demo-4](./doc-images/keycloak-demo-4.png)
 
-13. user1 생성 후 Credentials 탭으로 이동 후 비밀번호를 설정 후 하단의 Set Password 버튼을 누른다.
+14. user1 생성 후 Credentials 탭으로 이동 후 비밀번호를 설정 후 하단의 Set Password 버튼을 누른다.
 ![keycloak-demo-5](./doc-images/keycloak-demo-5.png)
 
-14. 상단 Role Mappings 탭으로 이동 후 Client Roles > login-app 선택 후 Available Roles 에서 11번에서 생성한 user Role 을 클릭 후 Ad Selected 버튼을 클릭하면 user Role 이 Assigned Roles 로 이동한다. 이렇게 되면 완료된 상태이다.
+15. 상단 Role Mappings 탭으로 이동 후 Client Roles > login-app 선택 후 Available Roles 에서 11번에서 생성한 user Role 을 클릭 후 Ad Selected 버튼을 클릭하면 user Role 이 Assigned Roles 로 이동한다. 이렇게 되면 완료된 상태이다.
 ![keycloak-demo-6](./doc-images/keycloak-demo-6.png)
 
-15. 설정이 완료되었으면 postman 프로그램을 이용하여 로그인 테스트가 가능하다. 로그인이 정상적으로 되었으면 토큰이 발급된다.
+16. 설정이 완료되었으면 postman 프로그램을 이용하여 로그인 테스트가 가능하다. 로그인이 정상적으로 되었으면 토큰이 발급된다.
 ![keycloak-demo-7](./doc-images/keycloak-demo-7.png)
