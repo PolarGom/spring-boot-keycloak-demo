@@ -32,6 +32,7 @@ dependencies {
 //	implementation("org.keycloak:keycloak-spring-boot-adapter:15.0.2")
 //	implementation("org.keycloak:keycloak-spring-security-adapter:15.0.2")
 	implementation("org.keycloak:keycloak-spring-boot-2-starter:4.0.0.Beta2")
+	implementation("org.keycloak:keycloak-admin-client:16.0.0")
 	implementation("org.springframework.boot:spring-boot-starter-security:2.6.1")
 }
 

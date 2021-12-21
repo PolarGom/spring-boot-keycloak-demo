@@ -18,18 +18,18 @@ import java.io.InputStream
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(jsr250Enabled = true)
 class KeycloakConfig: KeycloakWebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity?) {
 
         super.configure(http)
 
+        // Keycloak 에서 Client 의 Role 을 추가한다. 혹은 Realm Role 에 Composite Roles 설정을 추가하여 Client 의 Role 을 추가한다.
         http!!.authorizeRequests()
             .antMatchers("/api/anonymous").permitAll()
-            .antMatchers("/api/user").hasAnyRole("app-user")
-            .antMatchers("/api/admin").hasAnyRole("app-admin")
-            .antMatchers("/api/all-user").hasAnyRole("app-user", "app-admin")
+            .antMatchers("/api/user").hasAnyRole("user")
+            .antMatchers("/api/admin").hasAnyRole("admin")
+            .antMatchers("/api/all-user").hasAnyRole("user", "admin")
             .anyRequest().permitAll()
         http!!.csrf().disable()
     }
