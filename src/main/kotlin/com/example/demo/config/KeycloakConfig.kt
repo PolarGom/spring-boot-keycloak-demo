@@ -1,9 +1,11 @@
 package com.example.demo.config
 
+import com.example.demo.config.keycloak.properties.KeycloakProperty
 import org.keycloak.adapters.KeycloakConfigResolver
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver
 import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
@@ -16,8 +18,15 @@ import org.springframework.security.web.authentication.session.RegisterSessionAu
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy
 import java.io.InputStream
 
+/**
+ * Keycloak 및 Security 설정
+ *
+ * @author demo
+ * @since 2021-12-23
+ */
 @Configuration
 @EnableWebSecurity
+@EnableConfigurationProperties(KeycloakProperty::class)
 class KeycloakConfig: KeycloakWebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity?) {

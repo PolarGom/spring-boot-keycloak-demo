@@ -6,6 +6,12 @@ import org.springframework.web.client.RestTemplate
 import org.springframework.web.servlet.config.annotation.CorsRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
+/**
+ * Web MVC 설정
+ *
+ * @author demo
+ * @since 2021-12-23
+ */
 @Configuration
 class WebMvcConfig: WebMvcConfigurer {
 
