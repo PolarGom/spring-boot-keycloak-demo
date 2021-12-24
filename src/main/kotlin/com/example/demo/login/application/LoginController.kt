@@ -1,5 +1,6 @@
 package com.example.demo.login.application
 
+import com.example.demo.config.keycloak.KeycloakClient
 import com.example.demo.config.keycloak.properties.KeycloakProperty
 import com.example.demo.login.application.request.RequestLogin
 import org.keycloak.admin.client.Keycloak
@@ -22,18 +23,16 @@ class LoginController {
 
     private val log = LoggerFactory.getLogger(LoginController::class.java)
 
-    private val keycloakProperty: KeycloakProperty
+    private val keycloakClient: KeycloakClient
 
-    constructor(keycloakProperty: KeycloakProperty) {
+    constructor(keycloakClient: KeycloakClient) {
 
-        this.keycloakProperty = keycloakProperty
+        this.keycloakClient = keycloakClient
     }
 
     @PostMapping("/login")
     fun login(@RequestBody requestLogin: RequestLogin) {
 
-        log.info("로그인 정보: $requestLogin   $keycloakProperty")
-
-
+        log.info("로그인 정보: $requestLogin")
     }
 }

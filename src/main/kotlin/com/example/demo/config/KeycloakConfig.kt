@@ -1,5 +1,6 @@
 package com.example.demo.config
 
+import com.example.demo.config.keycloak.KeycloakClient
 import com.example.demo.config.keycloak.properties.KeycloakProperty
 import org.keycloak.adapters.KeycloakConfigResolver
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver
@@ -16,6 +17,7 @@ import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper
 import org.springframework.security.core.session.SessionRegistryImpl
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy
+import org.springframework.web.reactive.function.client.WebClient
 import java.io.InputStream
 
 /**
@@ -62,5 +64,11 @@ class KeycloakConfig: KeycloakWebSecurityConfigurerAdapter() {
     fun KeycloakConfigResolver(): KeycloakConfigResolver {
 
         return KeycloakSpringBootConfigResolver()
+    }
+
+    @Bean
+    fun keycloakClient(keycloakProperty: KeycloakProperty): WebClient {
+
+        return KeycloakClient(keycloakProperty).getWebClient()
     }
 }

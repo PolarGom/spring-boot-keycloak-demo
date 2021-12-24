@@ -15,8 +15,7 @@ import org.springframework.stereotype.Component
 @ConfigurationProperties(prefix = "keycloak")
 @ConstructorBinding
 data class KeycloakProperty(
-    val adminId: String,
-    val adminPw: String,
+    val authServerSuffixUrl: String,
     val realm: String,
     val authServerUrl: String,
     val sslRequired: String,
@@ -24,4 +23,10 @@ data class KeycloakProperty(
     val credentials: Credentials,
     val useResourceRoleMappings: Boolean,
     val bearerOnly: Boolean,
-)
+) {
+
+    fun getAuthUrl(): String {
+
+        return "${this.authServerUrl}${this.authServerSuffixUrl}"
+    }
+}

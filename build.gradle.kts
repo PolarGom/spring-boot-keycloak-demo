@@ -34,6 +34,7 @@ dependencies {
 	implementation("org.keycloak:keycloak-spring-boot-2-starter:4.0.0.Beta2")
 	implementation("org.keycloak:keycloak-admin-client:16.0.0")
 	implementation("org.springframework.boot:spring-boot-starter-security:2.6.1")
+	implementation("org.springframework.boot:spring-boot-starter-webflux:2.6.2")
 }
 
 tasks.withType<KotlinCompile> {
