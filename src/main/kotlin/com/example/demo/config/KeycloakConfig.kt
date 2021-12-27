@@ -67,8 +67,8 @@ class KeycloakConfig: KeycloakWebSecurityConfigurerAdapter() {
     }
 
     @Bean
-    fun keycloakClient(keycloakProperty: KeycloakProperty): WebClient {
+    fun keycloakClient(keycloakProperty: KeycloakProperty): KeycloakClient {
 
-        return KeycloakClient(keycloakProperty).getWebClient()
+        return KeycloakClient(keycloakProperty)
     }
 }

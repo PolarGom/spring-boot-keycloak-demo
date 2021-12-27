@@ -9,7 +9,6 @@ server:
   port: 8081
 
 keycloak:
-  auth-server-suffix-url: /realms/springbootkeycloak/protocol/openid-connect/token
   realm: springbootkeycloak
   auth-server-url: http://127.0.0.1:8000/auth
   ssl-required: external

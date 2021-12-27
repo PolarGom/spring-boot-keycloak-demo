@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.stereotype.Component
 
 /**
- * Keycloak 설정 정보
+ * Keycloak 설정
  *
  * @author demo
  * @since 2021-12-24
@@ -15,18 +15,11 @@ import org.springframework.stereotype.Component
 @ConfigurationProperties(prefix = "keycloak")
 @ConstructorBinding
 data class KeycloakProperty(
-    val authServerSuffixUrl: String,
     val realm: String,
     val authServerUrl: String,
     val sslRequired: String,
     val resource: String,
     val credentials: Credentials,
     val useResourceRoleMappings: Boolean,
-    val bearerOnly: Boolean,
-) {
-
-    fun getAuthUrl(): String {
-
-        return "${this.authServerUrl}${this.authServerSuffixUrl}"
-    }
-}
+    val bearerOnly: Boolean
+)

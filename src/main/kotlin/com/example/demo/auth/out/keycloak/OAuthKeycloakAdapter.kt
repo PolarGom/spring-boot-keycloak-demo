@@ -1,8 +1,9 @@
 package com.example.demo.auth.out.keycloak
 
+import com.example.demo.auth.out.response.ResponseOAuthToken
+import com.example.demo.config.keycloak.KeycloakClient
 import com.example.demo.login.port.out.IOAuthPort
 import org.springframework.stereotype.Component
-import org.springframework.web.client.RestTemplate
 
 /**
  * 인증 Keycloak 어댑터
@@ -13,13 +14,30 @@ import org.springframework.web.client.RestTemplate
 @Component
 class OAuthKeycloakAdapter: IOAuthPort {
 
-    private val restTemplate: RestTemplate
+    private val keycloakClient: KeycloakClient
 
-    constructor(restTemplate: RestTemplate) {
+    constructor(keycloakClient: KeycloakClient) {
 
-        this.restTemplate = restTemplate
+        this.keycloakClient = keycloakClient
     }
 
-    override fun login(id: String, pw: String) {
+    override fun login(id: String, pw: String): ResponseOAuthToken {
+
+        val responseLogin = keycloakClient.login(id, pw)
+
+        return ResponseOAuthToken(responseLogin!!.accessToken,
+            responseLogin.expiresIn,
+            responseLogin.refreshExpiresIn,
+            responseLogin.refreshToken)
+    }
+
+    override fun refreshToken(refreshToken: String): ResponseOAuthToken {
+
+        val responseLogin = keycloakClient.refreshToken(refreshToken)
+
+        return ResponseOAuthToken(responseLogin!!.accessToken,
+            responseLogin.expiresIn,
+            responseLogin.refreshExpiresIn,
+            responseLogin.refreshToken)
     }
 }

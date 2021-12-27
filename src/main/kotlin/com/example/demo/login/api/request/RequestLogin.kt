@@ -1,4 +1,4 @@
-package com.example.demo.login.application.request
+package com.example.demo.login.api.request
 
 /**
  * 로그인 요청
@@ -9,5 +9,4 @@ package com.example.demo.login.application.request
 data class RequestLogin(
     val id: String,
     val pw: String
-) {
-}
+)
