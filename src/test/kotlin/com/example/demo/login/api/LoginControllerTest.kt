@@ -18,7 +18,9 @@ import javax.ws.rs.core.MediaType
  * @since 2021-12-23
  */
 class LoginControllerTest: CommonControllerTest() {
-    
+
+    var responseToken: ResponseToken? = null
+
     @Test
     @Order(1)
     @DisplayName("로그인 테스트")
@@ -39,7 +41,7 @@ class LoginControllerTest: CommonControllerTest() {
 
         val responseToken: ResponseToken = parseMvcRespnoseBody(mvcResult, ResponseToken::class.java)
 
-        println(responseToken)
+        this.responseToken = responseToken
     }
 
     @Test
@@ -47,6 +49,12 @@ class LoginControllerTest: CommonControllerTest() {
     @DisplayName("토큰 갱신 테스트")
     fun testRefreshToken() {
 
-
+        val mvcResult = this.mockMvc.perform(
+            MockMvcRequestBuilders.post("/api/token-refresh")
+                .content(this.responseToken!!.refreshToken)
+                .contentType(MediaType.APPLICATION_JSON)
+        ).andDo(MockMvcResultHandlers.print())
+            .andExpect(MockMvcResultMatchers.status().isOk)
+            .andReturn()
     }
 }

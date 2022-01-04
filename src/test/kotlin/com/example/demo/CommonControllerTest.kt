@@ -1,8 +1,6 @@
 package com.example.demo
 
 import com.example.demo.common.dto.response.IResponseResultBody
-import com.example.demo.common.dto.response.ResponseResult
-import com.example.demo.login.api.response.ResponseToken
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
@@ -31,10 +29,10 @@ class CommonControllerTest {
 		return objectMapper.writeValueAsString(value)
 	}
 
-	protected fun <T: IResponseResultBody> parseMvcRespnoseBody(mvcResult: MvcResult, parseObject: Class<T>): T {
+	protected fun <T: IResponseResultBody> parseMvcRespnoseBody(mvcResult: MvcResult, clazz: Class<T>): T {
 
 		val body = this.objectMapper.readValue(mvcResult.response.contentAsString, Map::class.java)["body"]
 
-		return this.objectMapper.convertValue(body, parseObject)
+		return this.objectMapper.convertValue(body, clazz)
 	}
 }
