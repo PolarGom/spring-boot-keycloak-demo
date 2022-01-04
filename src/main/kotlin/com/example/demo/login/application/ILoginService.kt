@@ -1,8 +1,8 @@
 package com.example.demo.login.application
 
 import com.example.demo.common.dto.response.ResponseResult
-import com.example.demo.login.api.request.RequestLogin
-import com.example.demo.login.api.response.ResponseToken
+import com.example.demo.login.api.dto.request.RequestLogin
+import com.example.demo.login.api.dto.response.ResponseToken
 
 /**
  * 로그인 서비스 인터페이스

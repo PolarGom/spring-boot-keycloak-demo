@@ -1,4 +1,4 @@
-package com.example.demo.login.api.request
+package com.example.demo.login.api.dto.request
 
 /**
  * 갱신 토큰 요청

@@ -1,4 +1,4 @@
-package com.example.demo.auth.out.response
+package com.example.demo.auth.out.dto.response
 
 /**
  * OAuth 로그인 응답

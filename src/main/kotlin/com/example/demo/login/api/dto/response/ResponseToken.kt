@@ -1,4 +1,4 @@
-package com.example.demo.login.api.response
+package com.example.demo.login.api.dto.response
 
 import com.example.demo.common.dto.response.IResponseResultBody
 

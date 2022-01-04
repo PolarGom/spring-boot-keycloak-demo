@@ -1,6 +1,6 @@
 package com.example.demo.auth.out.keycloak
 
-import com.example.demo.auth.out.response.ResponseOAuthToken
+import com.example.demo.auth.out.dto.response.ResponseOAuthToken
 import com.example.demo.config.keycloak.KeycloakClient
 import com.example.demo.login.port.out.IOAuthPort
 import org.springframework.stereotype.Component

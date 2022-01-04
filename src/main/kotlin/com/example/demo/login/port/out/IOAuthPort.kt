@@ -1,6 +1,6 @@
 package com.example.demo.login.port.out
 
-import com.example.demo.auth.out.response.ResponseOAuthToken
+import com.example.demo.auth.out.dto.response.ResponseOAuthToken
 
 /**
  * 인증 포트

@@ -1,4 +1,4 @@
-package com.example.demo.login.api.request
+package com.example.demo.login.api.dto.request
 
 /**
  * 로그인 요청

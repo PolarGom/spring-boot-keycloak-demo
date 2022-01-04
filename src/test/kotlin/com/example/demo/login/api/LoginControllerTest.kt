@@ -1,8 +1,8 @@
 package com.example.demo.login.api
 
 import com.example.demo.CommonControllerTest
-import com.example.demo.login.api.request.RequestLogin
-import com.example.demo.login.api.response.ResponseToken
+import com.example.demo.login.api.dto.request.RequestLogin
+import com.example.demo.login.api.dto.response.ResponseToken
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test

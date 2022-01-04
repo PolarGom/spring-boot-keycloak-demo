@@ -2,10 +2,8 @@ package com.example.demo.login.api
 
 import com.example.demo.common.dto.response.IResponseResultBody
 import com.example.demo.common.dto.response.ResponseResult
-import com.example.demo.config.keycloak.KeycloakClient
-import com.example.demo.login.api.request.RequestLogin
+import com.example.demo.login.api.dto.request.RequestLogin
 import com.example.demo.login.application.ILoginService
-import com.example.demo.login.application.LoginService
 import org.slf4j.LoggerFactory
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping

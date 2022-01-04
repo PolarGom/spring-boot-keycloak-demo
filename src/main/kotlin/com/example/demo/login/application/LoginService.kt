@@ -2,8 +2,8 @@ package com.example.demo.login.application
 
 import com.example.demo.auth.out.keycloak.OAuthKeycloakAdapter
 import com.example.demo.common.dto.response.ResponseResult
-import com.example.demo.login.api.request.RequestLogin
-import com.example.demo.login.api.response.ResponseToken
+import com.example.demo.login.api.dto.request.RequestLogin
+import com.example.demo.login.api.dto.response.ResponseToken
 import com.example.demo.login.port.out.IOAuthPort
 import org.springframework.stereotype.Service
 
